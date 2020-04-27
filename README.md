@@ -39,10 +39,10 @@ In this example, `proxy` is an `http.Handler` and is typically used with an `htt
 
 You can control offloader's behavior using response headers from your backend server.
 
-| Header                       | Possible values       | Behavior |
-| ---                          | ---                   | --- |
-| Offload-Requested            | (Any)                 | If this header is present, then offload is enabled. Otherwise, the backend response is passed directly back to the client. |
-| Offload-Url                  | (Any valid URL)       | The protocol, host, and path for the offload request are determined from this URL. |
-| Offload-Method               | "GET", "POST", "HEAD" | The request to the offload server uses this HTTP method. |
-| Offload-Forward-Body         | (Any)                 | If this header is present, then the response body from the backend will be sent as the _request_ body to the offload server. This is useful for making POST requests to the offload server. |
-| Offload-X-<your-header-name> | (Any)                 | Headers in this format will be passed to the offload server as `Your-Header-Name`. |
+| Header                         | Possible values | Behavior |
+| ---                            | ---             | --- |
+| `Offload-Requested`            | (Any)           | If this header is present, then offload is enabled. Otherwise, the backend response is passed directly back to the client. |
+| `Offload-Url`                  | (Any valid URL) | The protocol, host, and path for the offload request are determined from this URL. |
+| `Offload-Method`               | GET, HEAD, POST | The request to the offload server uses this HTTP method. |
+| `Offload-Forward-Body`         | (Any)           | If this header is present, then the response body from the backend will be sent as the _request_ body to the offload server. This is useful for making POST requests to the offload server. |
+| `Offload-X-<your-header-name>` | (Any)           | Headers in this format will be passed to the offload server as `Your-Header-Name`. |
